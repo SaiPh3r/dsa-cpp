@@ -7,9 +7,10 @@ vector<int> sieve(int n){
     vector <int> arr(n+1,1);
     // sbse pehle 2 ke multiple ko 0 krde
     int j=2;
-    for(int i=2;i<n;i++){
+    for(int i=2;i*i<n;i++){  // optimisation 2 run loop till root n
         if(arr[i]==1){
-            j = i*2;
+            // j = i*2;
+            j = i*i; // optimisation
             while(j<=n){
                 arr[j]=0;
                 j+=i;
