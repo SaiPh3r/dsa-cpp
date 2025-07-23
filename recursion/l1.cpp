@@ -9,8 +9,20 @@ int factorial(int n){
     int ans = n*rec;
     return ans; 
 }
+
+int two_power(int n){
+    if(n==0) return 1;
+
+    int pow =two_power(n-1);
+    int ans = 2*pow;
+    return ans;
+}
+
 int main(){
     int check = factorial(6);
     cout<<check<<endl;
+
+    int power = two_power(4);
+    cout<<power<<endl;
     return 0;
 }
