@@ -43,7 +43,7 @@ void mergee(vector<int>& arr  , int s , int e){
     while(i<leftLength){
         arr[mainArrayIndex] = arr1[i];
         i++;
-        mainArrayIndex;
+        mainArrayIndex++;
     }
     while(j<rightLength){
         arr[mainArrayIndex] = arr2[j];
