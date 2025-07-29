@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/saianand/Documents/dsa-cpp/BT and DnC/output/mergeSort'
+relocations:     []
+...
