@@ -22,8 +22,6 @@ void mergee(vector<int>& arr  , int s , int e){
         mainArrayIndex++;
         
     }
-    
-
     // we get copies now just merge arr1 and arr2
     int i=0;
     int j=0;
