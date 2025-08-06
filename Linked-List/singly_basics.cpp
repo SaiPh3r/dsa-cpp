@@ -110,6 +110,48 @@ void insertRandom(Node*  head , Node* tail , int position , int value ){
 
 }
 
+void deleteRandom(int position , Node* head  , Node* tail){
+    int l = findLen(head);
+    if(position>l){
+        return;
+    }
+    // empty
+    if(head == NULL & tail== NULL){
+        return;
+    }
+    // single
+    if(head == tail && position ==1){
+        Node* temp = head;
+        head = NULL;
+        tail = NULL;
+        delete temp;
+        return;
+    }
+
+   // if 1st node
+    if(position == 1){
+        Node* temp = head;
+        head = head->next;
+       temp->next = NULL;
+       delete temp;
+       return;
+    }else{
+        Node* prev = head;
+        for(int i =0; i<= position-2 ; i++){
+            prev = prev->next;
+        }
+        Node* current = prev->next;
+        Node* forward = current->next;
+
+        // logic
+        current->next = NULL;
+        prev->next = forward;
+        delete current;
+    }
+    
+
+}
+
 
 int main(){
     // empty linked list
@@ -123,6 +165,8 @@ int main(){
     cout<<search(head , 20)<<endl;
     cout<<findLen(head);
     insertRandom(head , tail , 2 , 1000);
+    printLinkedList(head);
+    deleteRandom(2 , head , tail);
     printLinkedList(head);
     return 0;
 }
