@@ -30,7 +30,7 @@ void shapeDraw(Shape *S){
 int main(){
     Rectange R;
     // R.draw();
-    Circle C;
+    // Circle C;
     // C.draw();
     shapeDraw(& R);
 
