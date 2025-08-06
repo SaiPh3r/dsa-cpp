@@ -56,6 +56,58 @@ void printLinkedList(Node *head){
         cout<<temp->data<<"->";
         temp = temp->next;
     }
+    cout<<endl;
+}
+
+int findLen(Node* head){
+    int l = 0;
+    Node* temp = head;
+    while(temp != NULL){
+        l++;
+        temp = temp->next;
+    }
+    return l;
+}
+
+
+
+bool search(Node* head , int target){
+    Node*temp = head;
+    while(temp!=NULL){
+        if(temp->data == target ){
+            return true;
+        }else{
+            temp = temp->next;
+        }
+    }
+    return false;
+
+}
+
+void insertRandom(Node*  head , Node* tail , int position , int value ){
+    if(position ==1){
+        insertAtHead(value , head , tail);
+        return ;
+    }
+
+    int l = findLen(head);
+    if(position == l+1){
+        insertAtTail(value , head ,tail);
+    }else{
+        // create a new node
+        Node* newnode = new Node(value);
+        // create temp
+        Node* temp = head;
+        // that position -2 logic
+        for(int i=0 ; i<=position-2 ; i++){
+            temp = temp->next;
+        }
+        // now new node ->next = temp
+        newnode->next = temp->next;
+        temp->next = newnode;
+
+    }
+
 }
 
 
@@ -66,6 +118,11 @@ int main(){
     insertAtHead(10 , head , tail);
     insertAtHead(20 , head , tail);
     insertAtTail(40 , head  , tail);
+    printLinkedList(head);
+    cout<<search(head , 100)<<endl;
+    cout<<search(head , 20)<<endl;
+    cout<<findLen(head);
+    insertRandom(head , tail , 2 , 1000);
     printLinkedList(head);
     return 0;
 }
