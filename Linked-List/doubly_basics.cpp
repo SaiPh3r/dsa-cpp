@@ -14,6 +14,8 @@ class Node{
     }
 };
 
+
+
 void insertAtHead(int value , Node* &head , Node* &tail){
     // emtpy case
     if(head == NULL && tail == NULL){
@@ -158,6 +160,8 @@ void dlt(Node* &head ,Node* &tail ,  int position ){
     }
 }
 
+
+
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
@@ -172,3 +176,6 @@ int main(){
     print(head);
     return 0;
 }
+
+
+// git fix
