@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/saianand/Projects/csa-dsa-cloned/Stack/output/stack_and_recursion'
+relocations:     []
+...
