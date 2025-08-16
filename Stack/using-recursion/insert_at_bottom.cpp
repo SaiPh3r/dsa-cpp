@@ -19,6 +19,10 @@ void inserAtBottom(stack<int> &s , int value){
     s.push(topValue);
 }
 
+void reverse(stack<int>s){
+    
+}
+
 
 int main(){
     stack<int> s;
