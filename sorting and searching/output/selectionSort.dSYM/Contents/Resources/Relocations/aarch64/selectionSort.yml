@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/saianand/Documents/dsa-cpp/sorting/output/selectionSort'
+binary-path:     '/Users/saianand/Projects/csa-dsa-cloned/sorting and searching/output/selectionSort'
 relocations:     []
 ...
