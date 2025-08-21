@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-
 void insertionSort(vector<int> &arr){
     int n = arr.size();
     for(int i=1;i<n;i++){
@@ -12,7 +11,6 @@ void insertionSort(vector<int> &arr){
             j--;
         }
         arr[j+1] = temp;
-
     }
 }
 
