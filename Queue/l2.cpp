@@ -26,6 +26,25 @@ void printQ(queue<int>q){
     }
 }
 
+void reverseQusingRec(queue<int>&q){
+    // base case
+    if(q.empty()){
+        return;
+    }
+    
+    // recursion logic
+    int temp = q.front();
+    q.pop();
+
+    // recursive call
+    reverseQusingRec(q);
+
+    // back tracking
+    q.push(temp);
+    
+}
+
+
 int main(){
     queue<int>q;
     q.push(1);
@@ -38,6 +57,9 @@ int main(){
 
 
     reverseQ(q);
+    printQ(q);
+    reverseQusingRec(q);
+    cout<<endl;
     printQ(q);
     
     return 0;
