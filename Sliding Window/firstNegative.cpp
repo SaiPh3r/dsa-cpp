@@ -7,6 +7,7 @@ using namespace std;
 vector<int> firstNegative(vector<int>&arr , int k){
     vector<int>ans;
     deque<int>dq;
+    
     // 1st window
     // addition
     for(int index =0; index<k ; index++){
