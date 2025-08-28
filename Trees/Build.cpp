@@ -85,33 +85,43 @@ void postorder(Node* root){
 
 }
 
-void levelOrderTraversal(Node*root){
-    // base case
+void levelOrderTraversal(Node* root){
     if(root == NULL){
         return;
     }
 
-    // lets use a queue
-    queue<Node*> q;
-    //initial state
+    // lets initialize queue
+    queue<Node*>q;
     q.push(root);
+    // lets also push NULL , we are using null to print level-wise
+    q.push(NULL);
+
 
     while(!q.empty()){
         Node* front = q.front();
-        cout<<front->value<<" ";
         q.pop();
 
+        if(front == NULL){
+            // iska matlb is level ki sari values hogyi h 
+            cout<<endl;
 
-        // we need to print new layer now child layer
-        if(front->left != NULL){
-            q.push(front->left);
-        }
+            if(!q.empty()){
+                q.push(NULL);
+            }
 
-        if(front->right!=NULL){
-            q.push(front->right);
+        }else{
+            cout<<front->value<<" ";
+
+            if(front->left != NULL){
+                q.push(front->left);
+            }
+
+            if(front->right!=NULL){
+                q.push(front->right);
+            }
+
         }
     }
-
 }
 
 int main(){
