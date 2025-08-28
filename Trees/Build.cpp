@@ -1,5 +1,7 @@
 #include<iostream>
+#include<queue>
 using namespace std;
+
 
 class Node{
     public:
@@ -83,6 +85,35 @@ void postorder(Node* root){
 
 }
 
+void levelOrderTraversal(Node*root){
+    // base case
+    if(root == NULL){
+        return;
+    }
+
+    // lets use a queue
+    queue<Node*> q;
+    //initial state
+    q.push(root);
+
+    while(!q.empty()){
+        Node* front = q.front();
+        cout<<front->value<<" ";
+        q.pop();
+
+
+        // we need to print new layer now child layer
+        if(front->left != NULL){
+            q.push(front->left);
+        }
+
+        if(front->right!=NULL){
+            q.push(front->right);
+        }
+    }
+
+}
+
 int main(){
     // 10 20 30 -1 -1 40 -1 -1 50 -1 60 -1 -1
     Node* root = build_tree();
@@ -96,6 +127,10 @@ int main(){
 
     cout<<"printing post-order"<<endl;
     postorder(root);
+    cout<<endl;
+
+    cout<<"Printint level order"<<endl;
+    levelOrderTraversal(root);
     cout<<endl;
 
     return 0;
