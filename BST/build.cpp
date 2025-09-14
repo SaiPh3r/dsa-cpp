@@ -58,12 +58,23 @@ void preorder(Node* root ){
 
 }
 
+int getmax(Node* root){
+    if(root->right  == NULL){
+        return root->data;
+    }
+
+    return getmax(root->right);
+}
+
 
 
 int main(){
     Node* root = NULL;
     root = createBst(root);
     preorder(root);
+    
+    cout<<endl;
+    cout<<getmax(root);
+    
     return 0; 
-
 }
